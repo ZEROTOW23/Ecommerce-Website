@@ -1,0 +1,79 @@
+/* Ensure that the carousel container covers the full width and height */
+.carousel {
+    height: 700px; /* Adjust height as needed */
+  }
+  
+  /* Ensure carousel inner container takes full height */
+  .carousel .carousel-inner {
+    height: 100%;
+  }
+  
+  /* Make sure carousel items take full height */
+  .carousel .carousel-item {
+    height: 100%;
+  }
+  
+  /* Style for images in the carousel */
+  .carousel .carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* Ensure the image covers the carousel area */
+  }
+  
+  /* Container for the carousel content */
+  .carousel-item-content {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* semi-transparent background for better readability */
+    border-radius: 10px;
+    color: white;
+  }
+  
+  /* Style for product image */
+  .product-image {
+    flex: 1;
+    max-width: 50%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  /* Style for the caption content */
+  .carousel-caption-content {
+    flex: 1;
+    margin-left: 20px;
+  }
+  
+  /* Heading styles */
+  .carousel-caption-content h5 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  /* Paragraph styles for description */
+  .carousel-caption-content p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    line-height: 1.5;
+  }
+  
+  /* Price styles */
+  .carousel-caption-content .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffcc00; /* Highlight the price with a different color */
+  }
+  
+  /* Optional: Add a transition for smoother effect */
+  .carousel-item-content {
+    transition: all 0.3s ease;
+  }
+  
+  .carousel-item-content:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add a shadow effect on hover */
+  }
+  

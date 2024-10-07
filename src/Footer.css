@@ -1,0 +1,151 @@
+.footer-section {
+  background-color: #333;
+  color: #fff;
+  padding-top: 1.5rem;  /* Reduced padding for a smaller footer */
+  padding-bottom: 1.5rem;  /* Reduced padding for a smaller footer */
+}
+
+.footer-cta {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.single-cta {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem; /* Reduced margin for a smaller section */
+}
+
+.single-cta i {
+  font-size: 1.5rem;  /* Reduced icon size for a smaller footer */
+  margin-right: 0.75rem;  /* Reduced margin for a smaller section */
+}
+
+.footer-cta .cta-text {
+  font-size: 0.875rem;  /* Reduced font size for a smaller section */
+}
+
+.footer-content .footer-logo img {
+  max-width: 120px;  /* Reduced max-width for a smaller logo */
+}
+
+.footer-text p {
+  margin: 0.5rem 0;
+  font-size: 0.875rem;  /* Reduced font size for a more compact text */
+}
+
+.footer-social-icon {
+  margin-top: 0.5rem;  /* Reduced margin for a more compact footer */
+}
+
+.footer-social-icon a {
+  margin-right: 0.5rem;
+  color: #fff;
+  font-size: 1.25rem;  /* Reduced icon size for a smaller footer */
+}
+
+.footer-widget ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-widget ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-widget ul li a {
+  color: #fff;
+}
+
+.footer-widget ul li a:hover {
+  text-decoration: underline;
+}
+
+.subscribe-form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;  /* Added gap for better spacing */
+}
+
+.subscribe-form input {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  flex: 1;
+}
+
+.subscribe-form button {
+  background-color: #555;
+  border: none;
+  padding: 0.5rem 0.75rem;  /* Reduced padding for a more compact button */
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.subscribe-form button:hover {
+  background-color: #666;
+}
+
+.footer-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer-menu ul li {
+  margin-left: 0.75rem;  /* Reduced margin for a more compact menu */
+}
+
+.footer-menu ul li a {
+  color: #fff;
+}
+
+.footer-menu ul li a:hover {
+  text-decoration: underline;
+}
+
+.copyright-area {
+  background-color: #222;
+  padding: 0.75rem 0;  /* Reduced padding for a smaller footer */
+}
+
+.copyright-text {
+  margin: 0;
+  font-size: 0.875rem;  /* Reduced font size for a more compact text */
+}
+
+.copyright-text a {
+  color: #ff6f61;
+}
+
+.copyright-text a:hover {
+  text-decoration: underline;
+}
+
+.read-more-sections h4 {
+  font-size: 1.125rem;  /* Adjusted heading size */
+}
+
+.read-more-sections p {
+  font-size: 0.875rem;  /* Adjusted paragraph size */
+}
+
+.read-more-link {
+  color: #ff6f61;
+}
+
+.read-more-link:hover {
+  text-decoration: underline;
+}
+
+.contact-info h4 {
+  font-size: 1.125rem;  /* Adjusted heading size */
+}
+
+.contact-info p {
+  font-size: 0.875rem;  /* Adjusted paragraph size */
+}

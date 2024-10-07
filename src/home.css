@@ -1,0 +1,429 @@
+.home .top_banner {
+  padding: 0 0 0 0;
+  color: white;
+  text-align: center;
+}
+
+.home .top_banner .content h3 {
+  font-size: 2rem;
+}
+
+.home .top_banner .content h2 {
+  font-size: 3rem;
+}
+
+.home .top_banner .content p {
+  font-size: 1.2rem;
+  margin: 20px 0;
+}
+
+.home .top_banner .content .link {
+  padding: 10px 20px;
+  background: #AA6C39;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* Add this for the carousel */
+.carousel {
+  height: 700px; /* Set the height of the carousel */
+}
+
+.carousel .carousel-inner {
+  height: 100%;
+}
+
+.carousel .carousel-item {
+  height: 100%;
+}
+
+.carousel .carousel-item img {
+  height: 100%;
+  object-fit: cover; /* Ensure images cover the carousel area */
+}
+
+.carousel-caption {
+  
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.carousel-caption h5 {
+  color: white;
+}
+
+.carousel-caption p {
+  color: white;
+}
+
+.price {
+  font-weight: bold;
+  color: #fff;
+}
+
+.product-card {
+  transition: transform 0.3s;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-width: 250px;
+  margin: 10px;
+
+  position: relative;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 15px;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.card-text.price {
+  color: green;
+  font-weight: bold;
+}
+
+.card-text.original-price {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.sale-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: red;
+  color: white;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+}
+
+.btn {
+  padding: 8px 12px;
+  background: #AA6C39;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #8C5C33;
+}
+
+.category-buttons {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.category-buttons .btn {
+  margin: 5px;
+  background-color: #f0f0f0;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.category-buttons .btn:hover {
+  background-color: #ddd;
+}
+
+.category-buttons .btn.active {
+  background-color: #333;
+  color: #fff;
+}
+
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid layout */
+}
+
+.card-text {
+  margin: 0.5rem 0;
+}
+.size-selection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.size-selection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center; /* Center the size buttons horizontally */
+}
+
+.btn-size {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  background-color: #f8f9fa;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+
+.product-card .price {
+  font-weight: bold;
+}
+.no-products-message {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+/* src/home.css */
+
+/* About Us Section */
+.about-us-container {
+  background-color: #f9f9f9; /* Light background for the section */
+  padding: 2rem 0; /* Top and bottom padding */
+  margin-top: 2rem; /* Space from previous content */
+}
+
+.about-us-image {
+  /* Ensure the image takes up half the width on medium screens and up */
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem; /* Space below the image on small screens */
+}
+
+.about-us-image img {
+  /* Style the About Us image */
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-us-description {
+  /* Ensure text takes up the other half of the width on medium screens and up */
+  flex: 1;
+  padding: 0 1.5rem;
+  text-align: center;
+  /* Add extra space on medium screens and up */
+}
+
+@media (min-width: 768px) {
+  .about-us-description {
+    padding-left: 2rem;
+    text-align: left;
+  }
+}
+
+.about-us-description h3 {
+  font-size: 2rem; /* Large heading */
+  margin-bottom: 1rem; /* Space below the heading */
+  color: #333; /* Dark text color for contrast */
+}
+
+.about-us-description p {
+  font-size: 1.125rem; /* Slightly larger text for readability */
+  color: #555; /* Medium gray text color */
+  margin-bottom: 1rem; /* Space between paragraphs */
+  line-height: 1.6; /* Increased line height for readability */
+}
+
+.about-us-description a {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #AA6C39; /* Background color */
+  color: #fff; /* Text color */
+  text-decoration: none; /* Remove underline */
+  border-radius: 5px;
+  margin-top: 1rem; /* Space above the link */
+  transition: background-color 0.3s ease;
+}
+
+.about-us-description a:hover {
+  background: #8C5C33; /* Darker background on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-us-container {
+    padding: 1.5rem 0; /* Reduce padding on small screens */
+  }
+
+  .about-us-description {
+    padding: 0; /* Remove left padding */
+  }
+
+  .about-us-image {
+    margin-bottom: 1rem; /* Reduce space below the image on small screens */
+  }
+}
+/* src/home.css */
+
+/* Home Page Styles */
+.home .top_banner {
+  padding: 0;
+  color: white;
+  text-align: center;
+}
+
+.home .top_banner .content h3 {
+  font-size: 2rem;
+}
+
+.home .top_banner .content h2 {
+  font-size: 3rem;
+}
+
+.home .top_banner .content p {
+  font-size: 1.2rem;
+  margin: 20px 0;
+}
+
+.home .top_banner .content .link {
+  padding: 10px 20px;
+  background: #AA6C39;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.home .top_banner .content .link:hover {
+  background: #8F5B36;
+}
+
+/* Product List Styles */
+.product-grid {
+  margin-top: 20px;
+}
+
+.product-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.size-selection .btn-size {
+
+
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+
+
+
+/* About Us Section Styles */
+.about-us-container {
+  background: #f5f5f5;
+}
+
+.about-us-description h3 {
+  font-size: 2rem;
+}
+
+.about-us-description p {
+  font-size: 1rem;
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Add these styles in home.css */
+
+/* Adjust the size of the images for the Ads and Delivery sections */
+.ads-image img,
+.delivery-image img {
+  max-width: 80%; /* Adjust this percentage to make the image smaller */
+  height: auto;
+  border-radius: 8px; /* Optional: Add border radius for a rounded look */
+}
+
+/* Adjust the container for the Ads and Delivery sections */
+.our-ads-container,
+.delivery-info-container {
+  padding: 5rem 0; /* Adjust padding for better spacing */
+}
+
+.our-ads-container .container,
+.delivery-info-container .container {
+  flex-direction: column; /* Make sure images and text stack vertically on small screens */
+  align-items: center; /* Center content */
+}
+
+.our-ads-container .ads-description,
+.delivery-info-container .delivery-info {
+  text-align: center; /* Center text for consistency */
+}
+
+/* Optional: Style the headings */
+.our-ads-container h3,
+.delivery-info-container h3 {
+  font-size: 2rem; /* Adjust font size as needed */
+}

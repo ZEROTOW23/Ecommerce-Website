@@ -1,0 +1,59 @@
+/* login.css */
+.login-container, .register-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url('./images/register.png') no-repeat center center;
+  background-size: cover;
+}
+
+.login-form, .register-form {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-form img, .register-form img {
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.login-form h2, .register-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-form .form-group, .register-form .form-group {
+  margin-bottom: 15px;
+}
+
+.login-form .login-button, .register-form .register-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.login-form .login-button:hover, .register-form .register-button:hover {
+  background-color: #0056b3;
+}
+
+.login-form .register-link, .register-form .login-link {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.login-form .error, .register-form .message {
+  color: red;
+  text-align: center;
+  margin-bottom: 15px;
+}

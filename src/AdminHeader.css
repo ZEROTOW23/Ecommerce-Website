@@ -1,0 +1,22 @@
+/* AdminHeader.css */
+.navbar1-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  
+  .navbar1-nav .nav-link {
+    color: white !important;
+    margin-right: 1rem;
+  }
+  
+  .navbar1-nav .btn-outline-danger {
+    color: white;
+    border-color: white;
+  }
+  
+  .navbar1-nav .btn-outline-danger:hover {
+    color: black;
+    background-color: white;
+    border-color: white;
+  }
+  

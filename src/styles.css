@@ -1,0 +1,39 @@
+.navbar-brand-text {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  .nav-item .nav-link {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-item .nav-link i {
+    margin-right: 5px;
+  }
+  
+  .nav-item .btn-outline-danger {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-item .btn-outline-danger i {
+    margin-right: 5px;
+  }
+  
+
+.nav-item {
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+}
+
+  
