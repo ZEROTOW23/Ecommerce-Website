@@ -25,79 +25,25 @@ const AdminDashboard = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchSupportMessages = async () => {
-      try {
-        const response = await fetch('http://localhost/ecommerce-site/src/Backend/get_support_messages.php');
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        setSupportMessages(data);
-      } catch (error) {
-        console.error('Error fetching support messages:', error);
-      }
-    };
-
-    const fetchOrders = async () => {
-      try {
-        const response = await fetch('http://localhost/ecommerce-site/src/Backend/get_orders.php');
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        setOrdersData(data);
-      } catch (error) {
-        console.error('Error fetching orders:', error);
-      }
-    };
-
-    const fetchTotalOrders = async () => {
-      try {
-        const response = await fetch('http://localhost/ecommerce-site/src/Backend/get_total_orders.php');
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        setTotalOrders(data.total_orders);
-      } catch (error) {
-        console.error('Error fetching total orders:', error);
-      }
-    };
-
-    const fetchTotalSales = async () => {
-      try {
-        const response = await fetch('http://localhost/ecommerce-site/src/Backend/get_total_users.php');
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        setTotalSales(data.total_users); // Use `total_users` to match PHP response
-      } catch (error) {
-        console.error('Error fetching total sales:', error);
-      }
-    };
-
-    const fetchTotalMoney = async () => {
-      try {
-        const response = await fetch('http://localhost/ecommerce-site/src/Backend/get_total_money.php');
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        setTotalMoney(Number(data.total_money) || 0); // Convert to number and fallback to 0
-      } catch (error) {
-        console.error('Error fetching total money:', error);
-      }
-    };
-
+    // Fetch all data in parallel
     const fetchData = async () => {
-      await Promise.all([
-        fetchSupportMessages(),
-        fetchOrders(),
-        fetchTotalOrders(),
-        fetchTotalSales(),
-        fetchTotalMoney()
-      ]);
+      try {
+        const [supportResponse, ordersResponse, totalOrdersResponse, totalSalesResponse, totalMoneyResponse] = await Promise.all([
+          fetch('http://localhost/ecommerce-site/src/Backend/get_support_messages.php'),
+          fetch('http://localhost/ecommerce-site/src/Backend/get_orders.php'),
+          fetch('http://localhost/ecommerce-site/src/Backend/get_total_orders.php'),
+          fetch('http://localhost/ecommerce-site/src/Backend/get_total_users.php'),
+          fetch('http://localhost/ecommerce-site/src/Backend/get_total_money.php'),
+        ]);
+
+        setSupportMessages(await supportResponse.json());
+        setOrdersData(await ordersResponse.json());
+        setTotalOrders((await totalOrdersResponse.json()).total_orders);
+        setTotalSales((await totalSalesResponse.json()).total_users);
+        setTotalMoney(Number((await totalMoneyResponse.json()).total_money) || 0);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
       setLoading(false);
     };
 
@@ -154,11 +100,12 @@ const AdminDashboard = () => {
 
   return (
     <div className="container mt-4">
-      <div className="row">
-        <div className="col-md-12 mb-4">
-          {/* Stats Speed Circles */}
-          <div className="d-flex justify-content-around mb-4">
-            <div className="text-center">
+      <div className="row mb-4">
+        <div className="col-md-12">
+          <h2 className="mb-4 text-center">Admin Dashboard</h2>
+          <div className="d-flex justify-content-around text-center">
+            {/* Total Orders Card */}
+            <div className="card shadow-sm p-4">
               <CircularProgressbar
                 value={totalOrders}
                 text={`${totalOrders}`}
@@ -169,9 +116,10 @@ const AdminDashboard = () => {
                   trailColor: '#e9ecef',
                 })}
               />
-              <p className="mt-2">Total Orders Confirmed</p>
+              <p className="mt-3">Total Orders</p>
             </div>
-            <div className="text-center">
+            {/* Total Sales Card */}
+            <div className="card shadow-sm p-4">
               <CircularProgressbar
                 value={totalSales}
                 text={`${totalSales}`}
@@ -182,12 +130,13 @@ const AdminDashboard = () => {
                   trailColor: '#e9ecef',
                 })}
               />
-              <p className="mt-2">Total Clients</p>
+              <p className="mt-3">Total Clients</p>
             </div>
-            <div className="text-center">
+            {/* Total Money Sold Card */}
+            <div className="card shadow-sm p-4">
               <CircularProgressbar
                 value={totalMoney}
-                maxValue={maxTotalMoney} // Set the maximum value for the progress bar
+                maxValue={maxTotalMoney}
                 text={`${totalMoney.toFixed(2)} Dhs`}
                 styles={buildStyles({
                   textSize: '16px',
@@ -196,27 +145,52 @@ const AdminDashboard = () => {
                   trailColor: '#e9ecef',
                 })}
               />
-              <p className="mt-2">Total Money Sold</p>
+              <p className="mt-3">Total Money Sold</p>
             </div>
           </div>
         </div>
-        <div className="col-md-8">
-          <h3>Support Messages</h3>
-          {loading ? (
-            <p>Loading support messages...</p>
-          ) : (
-            <ul>
-              {supportMessages.map(message => (
-                <li key={message.id}>
-                  <strong>Name:</strong> {message.name} <br />
-                  <strong>Email:</strong> {message.email} <br />
-                  <strong>Message:</strong> {message.message} <br />
-                  <small>Received at: {new Date(message.created_at).toLocaleString()}</small>
-                  <hr />
-                </li>
-              ))}
-            </ul>
-          )}
+      </div>
+
+      <div className="row">
+        <div className="col-lg-8 mb-4">
+          {/* Support Messages */}
+          <div className="card shadow-sm">
+            <div className="card-body">
+              <h3>Support Messages</h3>
+              {loading ? (
+                <p>Loading support messages...</p>
+              ) : (
+                <ul className="list-group list-group-flush">
+                  {supportMessages.map(message => (
+                    <li key={message.id} className="list-group-item">
+                      <strong>Name:</strong> {message.name} <br />
+                      <strong>Email:</strong> {message.email} <br />
+                      <strong>Message:</strong> {message.message} <br />
+                      <small>Received at: {new Date(message.created_at).toLocaleString()}</small>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </div>
+        </div>
+
+        <div className="col-lg-12">
+          {/* Orders Chart */}
+          <div className="card shadow-sm mb-4">
+            <div className="card-body">
+              <h3>Orders Over Time</h3>
+              <Line data={ordersChartData} />
+            </div>
+          </div>
+
+          {/* Products Sold Chart */}
+          <div className="card shadow-sm">
+            <div className="card-body">
+              <h3>Products Sold by Category</h3>
+              <Bar data={productsChartData} />
+            </div>
+          </div>
         </div>
       </div>
     </div>
